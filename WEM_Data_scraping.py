@@ -81,7 +81,7 @@ def statewise_data_process(df):
         group = data_array[i * (group_size) : (i + 1) * (group_size)]
 
         # Calculate the time-weighted average for the group
-        tw_avg = sum((float(value)) for value in group) / group_size
+        tw_avg = sum((float(value)*30) for value in group) / group_size
 
         # Append the result to the list
         tw_avg_values.append(tw_avg)
@@ -106,8 +106,9 @@ def plot_vic(df,state):
     
     plt.figure() #create new plot
     plt.plot(percentiles, percentile_values, marker='o', linestyle='-', color='g')
-    # Add labels and title
-    
+    # Add labels and title and RRP limit [-1000,15000]
+    ax = plt.gca()
+    ax.set_ylim([-1000, 15000])
     plt.xlabel('Percentiles (having 24 hrs data of ' + date +')')
     plt.ylabel('RRP in $/MWh')
     plt.title('Percentiles Plot of '+ str(state) +' RRP data',fontweight='bold')
