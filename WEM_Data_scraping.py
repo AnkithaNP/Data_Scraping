@@ -106,9 +106,9 @@ def plot_vic(df,state):
     
     plt.figure() #create new plot
     plt.plot(percentiles, percentile_values, marker='o', linestyle='-', color='g')
-    # Add labels and title and RRP limit [-1000,15000]
+    # Add labels and title and RRP limit [-1500,15000]
     ax = plt.gca()
-    ax.set_ylim([-1000, 15000])
+    ax.set_ylim([-1500, 15000])
     plt.xlabel('Percentiles (having 24 hrs data of ' + date +')')
     plt.ylabel('RRP in $/MWh')
     plt.title('Percentiles Plot of '+ str(state) +' RRP data',fontweight='bold')
