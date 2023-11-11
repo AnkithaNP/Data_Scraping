@@ -37,7 +37,7 @@ Follow the syntax to install the package
 To run the script follow the below command:
 > python3 WEM_Data_scraping.py
 
-> ## Expected output
+## Expected output
 
 * The creation of directories for downloaded, extracted files in the current working directory
 
